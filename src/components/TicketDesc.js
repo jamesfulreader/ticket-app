@@ -1,7 +1,11 @@
 import React from 'react'
 
-function TicketDesc() {
-	return <div>TicketDesc</div>
+function TicketDesc({ description }) {
+	return (
+		<div>
+			<p>{description}</p>
+		</div>
+	)
 }
 
 export default TicketDesc

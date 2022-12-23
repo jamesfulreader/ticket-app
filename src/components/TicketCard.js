@@ -5,14 +5,14 @@ import ResolveTicket from './ResolveTicket'
 import StatusDisplay from './StatusDisplay'
 import TicketDesc from './TicketDesc'
 
-function TicketCard() {
+function TicketCard({ ticket }) {
 	return (
 		<div>
 			<h2>TicketCard</h2>
-			<PriorityDisplay />
-			<StatusDisplay />
-			<Assignee />
-			<TicketDesc />
+			<PriorityDisplay priority={ticket.priority} />
+			<StatusDisplay status={ticket.status} />
+			<Assignee assignee={ticket.assignee} />
+			<TicketDesc description={ticket.description} />
 			<ResolveTicket />
 		</div>
 	)

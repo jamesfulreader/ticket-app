@@ -1,7 +1,7 @@
 import React from 'react'
 
-function StatusDisplay() {
-	return <div>StatusDisplay</div>
+function StatusDisplay({ status }) {
+	return <div>{status}</div>
 }
 
 export default StatusDisplay

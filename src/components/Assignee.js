@@ -1,7 +1,7 @@
 import React from 'react'
 
-function Assignee() {
-	return <div>Assignee</div>
+function Assignee({ assignee }) {
+	return <div>{assignee}</div>
 }
 
 export default Assignee
