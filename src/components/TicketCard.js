@@ -1,4 +1,3 @@
-import React from 'react'
 import PriorityDisplay from './PriorityDisplay'
 import Assignee from './Assignee'
 import ResolveTicket from './ResolveTicket'

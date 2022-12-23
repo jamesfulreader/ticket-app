@@ -1,5 +1,3 @@
-import React from 'react'
-
 function TicketDesc({ description }) {
 	return (
 		<div>
