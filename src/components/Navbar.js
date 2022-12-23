@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom'
+import HomeIcon from '@mui/icons-material/Home'
+import AddIcon from '@mui/icons-material/Add'
 
 function Navbar() {
 	const navigate = useNavigate()
@@ -6,10 +8,10 @@ function Navbar() {
 	return (
 		<nav>
 			<div className='icon' onClick={() => navigate('/ticket')}>
-				Ticket
+				<AddIcon />
 			</div>
 			<div className='icon' onClick={() => navigate('/')}>
-				Home
+				<HomeIcon />
 			</div>
 		</nav>
 	)
