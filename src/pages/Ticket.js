@@ -20,7 +20,7 @@ function Ticket() {
 	return (
 		<form>
 			<label htmlFor='priority'>Priority</label>
-			<div className='multiple-input-container'>
+			<section className='multiple-input-container'>
 				<input
 					type='radio'
 					id='priority-1'
@@ -61,68 +61,81 @@ function Ticket() {
 					onChange={handleChange}
 				/>
 				<label htmlFor='priority-5'>5</label>
-			</div>
-			<label htmlFor='Status'>Status</label>
-			<select name='status' id='status-select'>
-				<option value='on started' selected={formData.status === 'not started'}>
-					Not Started
-				</option>
-				<option
-					value='in progress'
-					selected={formData.status === 'in progress'}
-				>
-					In Progress
-				</option>
-				<option value='on hold' selected={formData.status === 'on hold'}>
-					On Hold
-				</option>
-				<option value='complete' selected={formData.status === 'complete'}>
-					Complete
-				</option>
-			</select>
-			<label htmlFor='assignee'>Assignee</label>
-			<select name='assignee' id='assignee-select'>
-				<option value='Jon Doe' selected={formData.assignee === 'Jon Doe'}>
-					Jon Doe
-				</option>
-				<option value='Jane Doe' selected={formData.assignee === 'Jane Doe'}>
-					Jane Doe
-				</option>
-				<option
-					value='Mark Jones'
-					selected={formData.assignee === 'Mark Jones'}
-				>
-					Mark Jones
-				</option>
-				<option
-					value='Jackie Grayson'
-					selected={formData.assignee === 'Jackie Grayson'}
-				>
-					Jackie Grayson
-				</option>
-				<option value='Mary Mars' selected={formData.assignee === 'Mary Mars'}>
-					Mary Mars
-				</option>
-				<option
-					value='George Gustov'
-					selected={formData.assignee === 'George Gustov'}
-				>
-					George Gustov
-				</option>
-				<option
-					value='Victoria Martinez'
-					selected={formData.assignee === 'Victoria Martinez'}
-				>
-					Victoria Martinez
-				</option>
-			</select>
-			<label htmlFor='ticket-description'>Ticket Description</label>
-			<textarea
-				name='ticket-description'
-				id='ticket-description'
-				cols='50'
-				rows='20'
-			></textarea>
+			</section>
+			<section>
+				<label htmlFor='Status'>Status</label>
+				<select name='status' id='status-select'>
+					<option
+						value='on started'
+						selected={formData.status === 'not started'}
+					>
+						Not Started
+					</option>
+					<option
+						value='in progress'
+						selected={formData.status === 'in progress'}
+					>
+						In Progress
+					</option>
+					<option value='on hold' selected={formData.status === 'on hold'}>
+						On Hold
+					</option>
+					<option value='complete' selected={formData.status === 'complete'}>
+						Complete
+					</option>
+				</select>
+			</section>
+			<section>
+				<label htmlFor='assignee'>Assignee</label>
+				<select name='assignee' id='assignee-select'>
+					<option value='Jon Doe' selected={formData.assignee === 'Jon Doe'}>
+						Jon Doe
+					</option>
+					<option value='Jane Doe' selected={formData.assignee === 'Jane Doe'}>
+						Jane Doe
+					</option>
+					<option
+						value='Mark Jones'
+						selected={formData.assignee === 'Mark Jones'}
+					>
+						Mark Jones
+					</option>
+					<option
+						value='Jackie Grayson'
+						selected={formData.assignee === 'Jackie Grayson'}
+					>
+						Jackie Grayson
+					</option>
+					<option
+						value='Mary Mars'
+						selected={formData.assignee === 'Mary Mars'}
+					>
+						Mary Mars
+					</option>
+					<option
+						value='George Gustov'
+						selected={formData.assignee === 'George Gustov'}
+					>
+						George Gustov
+					</option>
+					<option
+						value='Victoria Martinez'
+						selected={formData.assignee === 'Victoria Martinez'}
+					>
+						Victoria Martinez
+					</option>
+				</select>
+			</section>
+			<section>
+				<label htmlFor='ticket-description'>Ticket Description</label>
+				<textarea
+					name='ticket-description'
+					id='ticket-description'
+					cols='50'
+					rows='20'
+				></textarea>
+			</section>
+			<input type='button' value='submit' />
 		</form>
 	)
 }
