@@ -8,6 +8,7 @@ function Dashboard() {
 			status: 'not started',
 			description:
 				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, provident velit labore officiis modi sed ab sit voluptas, optio quisquam expedita deleniti quam. Esse, delectus!',
+			timestamp: '2022-12-25T18:31:46-0700',
 		},
 		{
 			assignee: 'Jane Doe',
@@ -15,6 +16,7 @@ function Dashboard() {
 			status: 'in progress',
 			description:
 				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, provident velit labore officiis modi sed ab sit voluptas, optio quisquam expedita deleniti quam. Esse, delectus!',
+			timestamp: '2022-12-25T18:31:46-0700',
 		},
 		{
 			assignee: 'Mark Jones',
@@ -22,6 +24,7 @@ function Dashboard() {
 			status: 'completed',
 			description:
 				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, provident velit labore officiis modi sed ab sit voluptas, optio quisquam expedita deleniti quam. Esse, delectus!',
+			timestamp: '2022-12-25T18:31:46-0700',
 		},
 		{
 			assignee: 'Jackie Grayson',
@@ -29,6 +32,7 @@ function Dashboard() {
 			status: 'on hold',
 			description:
 				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, provident velit labore officiis modi sed ab sit voluptas, optio quisquam expedita deleniti quam. Esse, delectus!',
+			timestamp: '2022-12-25T18:31:46-0700',
 		},
 		{
 			assignee: 'Mary Mars',
@@ -36,6 +40,7 @@ function Dashboard() {
 			status: 'in progress',
 			description:
 				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, provident velit labore officiis modi sed ab sit voluptas, optio quisquam expedita deleniti quam. Esse, delectus!',
+			timestamp: '2022-12-25T18:31:46-0700',
 		},
 		{
 			assignee: 'George Gustov',
@@ -43,6 +48,7 @@ function Dashboard() {
 			status: 'in progress',
 			description:
 				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, provident velit labore officiis modi sed ab sit voluptas, optio quisquam expedita deleniti quam. Esse, delectus!',
+			timestamp: '2022-12-25T18:31:46-0700',
 		},
 		{
 			assignee: 'Victoria Martinez',
@@ -50,6 +56,7 @@ function Dashboard() {
 			status: 'in progress',
 			description:
 				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, provident velit labore officiis modi sed ab sit voluptas, optio quisquam expedita deleniti quam. Esse, delectus!',
+			timestamp: '2022-12-25T18:31:46-0700',
 		},
 	]
 
