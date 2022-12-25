@@ -1,6 +1,6 @@
 function TicketDesc({ description }) {
 	return (
-		<div>
+		<div className='ticket-description'>
 			<p>{description}</p>
 		</div>
 	)

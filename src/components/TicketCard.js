@@ -6,7 +6,7 @@ import TicketDesc from './TicketDesc'
 
 function TicketCard({ ticket }) {
 	return (
-		<div>
+		<div className='ticket-card'>
 			<h2>TicketCard</h2>
 			<PriorityDisplay priority={ticket.priority} />
 			<StatusDisplay status={ticket.status} />

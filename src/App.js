@@ -8,9 +8,8 @@ function App() {
 	return (
 		<div className='App'>
 			<BrowserRouter>
-				<header className='App-header'>
-					<Navbar />
-				</header>
+				{/* <header className='App-header'></header> */}
+				<Navbar />
 				<Routes>
 					<Route path='/' element={<Dashboard />} />
 					<Route path='/ticket' element={<Ticket />} />
