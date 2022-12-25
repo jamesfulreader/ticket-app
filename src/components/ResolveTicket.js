@@ -1,7 +1,11 @@
 import React from 'react'
 
 function ResolveTicket() {
-	return <div>ResolveTicket</div>
+	return (
+		<strong>
+			<input className='resolve-btn' type='button' value='Resolve' />
+		</strong>
+	)
 }
 
 export default ResolveTicket
