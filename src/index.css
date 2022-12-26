@@ -17,7 +17,7 @@ code {
 nav {
 	display: flex;
 	flex-direction: column;
-	width: 13vw;
+	width: 10vw;
 	background-color: #282c34;
 }
 
@@ -33,7 +33,6 @@ nav .icon {
 	padding: 0.5em;
 	border-radius: 5px;
 	background-color: #39414e;
-	width: 75vw;
 }
 
 .ticket-card .ticket-description {
