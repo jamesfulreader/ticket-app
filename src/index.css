@@ -42,10 +42,24 @@ nav .icon {
 .resolve-btn {
 	padding: 7px 15px;
 	border-radius: 5px;
+	width: 125px;
 	background-color: #2248d2d0;
 	border: none;
 	cursor: pointer;
 	text-decoration: none;
 	font-weight: 700;
 	text-transform: uppercase !important;
+}
+
+.edit-btn {
+	padding: 7px 15px;
+	border-radius: 5px;
+	width: 125px;
+	background-color: #26f130d0;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: 700;
+	text-transform: uppercase !important;
+	margin-left: 5px;
 }

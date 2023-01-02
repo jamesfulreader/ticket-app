@@ -13,6 +13,7 @@ function App() {
 				<Routes>
 					<Route path='/' element={<Dashboard />} />
 					<Route path='/ticket' element={<Ticket />} />
+					<Route path='/ticket/:id' element={<Ticket editMode={true} />} />
 				</Routes>
 			</BrowserRouter>
 		</div>

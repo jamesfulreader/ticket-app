@@ -3,6 +3,7 @@ import Assignee from './Assignee'
 import ResolveTicket from './ResolveTicket'
 import StatusDisplay from './StatusDisplay'
 import TicketDesc from './TicketDesc'
+import EditTicket from './EditTicket'
 
 function TicketCard({ ticket }) {
 	return (
@@ -13,6 +14,7 @@ function TicketCard({ ticket }) {
 			<Assignee assignee={ticket.assignee} />
 			<TicketDesc description={ticket.description} />
 			<ResolveTicket />
+			<EditTicket id={ticket.ticket_id} />
 		</div>
 	)
 }
