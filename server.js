@@ -27,14 +27,14 @@ app.get('/tickets/:id', async (req, res) => {})
 app.post('/tickets', async (req, res) => {
 	try {
 		const { assignee, priority, status, description } = req.body
-		// 1999-01-08 04:05:06 -8:00
+
 		const timestamp = new Date().toLocaleString('en-GB', { timeZone: 'UTC' })
 
 		const newTicket = await pool.query(
 			'INSERT INTO ticket_item (assignee, timestamp, priority, status, description) VALUES($1, $2, $3, $4, $5)',
 			[assignee, timestamp, priority, status, description]
 		)
-		res.json(newTicket)
+		res.status(200).json({ msg: 'new ticket created ' })
 	} catch (error) {
 		console.error(error)
 	}
