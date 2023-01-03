@@ -47,7 +47,7 @@ app.post('/tickets', async (req, res) => {
 			'INSERT INTO ticket_item (assignee, timestamp, priority, status, description) VALUES($1, $2, $3, $4, $5)',
 			[assignee, timestamp, priority, status, description]
 		)
-		res.status(200).json({ msg: 'new ticket created ' })
+		res.status(200).json({ msg: 'new ticket created' })
 	} catch (error) {
 		console.error(error)
 	}

@@ -4,7 +4,7 @@ import axios from 'axios'
 
 function Ticket({ editMode }) {
 	const [formData, setFormData] = useState({
-		priority: 0,
+		priority: 1,
 		status: 'not started',
 		timestamp: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
 		assignee: 'Please Assign task',
@@ -15,7 +15,7 @@ function Ticket({ editMode }) {
 	let { id } = useParams()
 
 	const handleChange = (e) => {
-		const value = e.target.value
+		let value = e.target.value
 		const name = e.target.name
 
 		setFormData((prevState) => ({
@@ -27,9 +27,19 @@ function Ticket({ editMode }) {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 
-		if (editMode && id) {
+		if (editMode) {
 			const res = await axios.put(`http://localhost:5001/tickets/${id}`, {
 				data: formData,
+			})
+			const success = res.status === 200
+			if (success) {
+				navigate('/')
+			}
+		}
+
+		if (!editMode) {
+			const res = await axios.post(`http://localhost:5001/tickets`, {
+				formData,
 			})
 			const success = res.status === 200
 			if (success) {
@@ -50,48 +60,48 @@ function Ticket({ editMode }) {
 	}, [])
 
 	return (
-		<form>
+		<form onSubmit={handleSubmit}>
 			<h1>{editMode ? 'Update Your Ticket' : 'Create a Ticket'}</h1>
 			<label htmlFor='priority'>Priority</label>
 			<section className='multiple-input-container'>
 				<input
 					type='radio'
 					id='priority-1'
+					onChange={handleChange}
 					value={1}
 					checked={formData.priority === 1}
-					onChange={handleChange}
 				/>
 				<label htmlFor='priority-1'>1</label>
 				<input
 					type='radio'
 					id='priority-2'
+					onChange={handleChange}
 					value={2}
 					checked={formData.priority === 2}
-					onChange={handleChange}
 				/>
 				<label htmlFor='priority-2'>2</label>
 				<input
 					type='radio'
 					id='priority-3'
+					onChange={handleChange}
 					value={3}
 					checked={formData.priority === 3}
-					onChange={handleChange}
 				/>
 				<label htmlFor='priority-3'>3</label>
 				<input
 					type='radio'
 					id='priority-4'
+					onChange={handleChange}
 					value={4}
 					checked={formData.priority === 4}
-					onChange={handleChange}
 				/>
 				<label htmlFor='priority-4'>4</label>
 				<input
 					type='radio'
 					id='priority-5'
+					onChange={handleChange}
 					value={5}
 					checked={formData.priority === 5}
-					onChange={handleChange}
 				/>
 				<label htmlFor='priority-5'>5</label>
 			</section>
@@ -167,7 +177,8 @@ function Ticket({ editMode }) {
 					cols='50'
 					rows='20'
 					value={formData.description}
-				></textarea>
+					onChange={handleChange}
+				/>
 			</section>
 			<input type='button' value='submit' />
 		</form>
