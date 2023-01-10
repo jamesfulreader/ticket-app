@@ -39,7 +39,7 @@ app.get('/tickets/:id', async (req, res) => {
 // Create one ticket
 app.post('/tickets', async (req, res) => {
 	try {
-		const { assignee, priority, status, description } = req.body
+		const { assignee, priority, status, description } = req.body.formData
 
 		const timestamp = new Date().toLocaleString('en-GB', { timeZone: 'UTC' })
 
@@ -55,7 +55,7 @@ app.post('/tickets', async (req, res) => {
 // Update ticket
 app.put('/tickets/:id', async (req, res) => {
 	const id = parseInt(req.params.id)
-	const { assignee, priority, status, description } = req.body
+	const { assignee, priority, status, description } = req.body.data
 
 	pool.query(
 		'UPDATE ticket_item SET assignee = $1, priority = $2, status = $3, description = $4 WHERE ticket_id = $5',

@@ -4,18 +4,18 @@ import axios from 'axios'
 
 function Ticket({ editMode }) {
 	const [formData, setFormData] = useState({
-		priority: 1,
+		// priority: '',
 		status: 'not started',
-		timestamp: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
-		assignee: 'Please Assign task',
-		description: '',
+		// timestamp: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
+		assignee: 'Jon Doe',
+		// description: '',
 	})
 
 	const navigate = useNavigate()
 	let { id } = useParams()
 
 	const handleChange = (e) => {
-		let value = e.target.value
+		const value = e.target.value
 		const name = e.target.name
 
 		setFormData((prevState) => ({
@@ -60,128 +60,158 @@ function Ticket({ editMode }) {
 	}, [])
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<h1>{editMode ? 'Update Your Ticket' : 'Create a Ticket'}</h1>
-			<label htmlFor='priority'>Priority</label>
-			<section className='multiple-input-container'>
-				<input
-					type='radio'
-					id='priority-1'
-					onChange={handleChange}
-					value={1}
-					checked={formData.priority === 1}
-				/>
-				<label htmlFor='priority-1'>1</label>
-				<input
-					type='radio'
-					id='priority-2'
-					onChange={handleChange}
-					value={2}
-					checked={formData.priority === 2}
-				/>
-				<label htmlFor='priority-2'>2</label>
-				<input
-					type='radio'
-					id='priority-3'
-					onChange={handleChange}
-					value={3}
-					checked={formData.priority === 3}
-				/>
-				<label htmlFor='priority-3'>3</label>
-				<input
-					type='radio'
-					id='priority-4'
-					onChange={handleChange}
-					value={4}
-					checked={formData.priority === 4}
-				/>
-				<label htmlFor='priority-4'>4</label>
-				<input
-					type='radio'
-					id='priority-5'
-					onChange={handleChange}
-					value={5}
-					checked={formData.priority === 5}
-				/>
-				<label htmlFor='priority-5'>5</label>
-			</section>
-			<section>
-				<label htmlFor='Status'>Status</label>
-				<select name='status' id='status-select'>
-					<option
-						value='on started'
-						selected={formData.status === 'not started'}
-					>
-						Not Started
-					</option>
-					<option
-						value='in progress'
-						selected={formData.status === 'in progress'}
-					>
-						In Progress
-					</option>
-					<option value='on hold' selected={formData.status === 'on hold'}>
-						On Hold
-					</option>
-					<option value='complete' selected={formData.status === 'complete'}>
-						Complete
-					</option>
-				</select>
-			</section>
-			<section>
-				<label htmlFor='assignee'>Assignee</label>
-				<select name='assignee' id='assignee-select'>
-					<option value='Jon Doe' selected={formData.assignee === 'Jon Doe'}>
-						Jon Doe
-					</option>
-					<option value='Jane Doe' selected={formData.assignee === 'Jane Doe'}>
-						Jane Doe
-					</option>
-					<option
-						value='Mark Jones'
-						selected={formData.assignee === 'Mark Jones'}
-					>
-						Mark Jones
-					</option>
-					<option
-						value='Jackie Grayson'
-						selected={formData.assignee === 'Jackie Grayson'}
-					>
-						Jackie Grayson
-					</option>
-					<option
-						value='Mary Mars'
-						selected={formData.assignee === 'Mary Mars'}
-					>
-						Mary Mars
-					</option>
-					<option
-						value='George Gustov'
-						selected={formData.assignee === 'George Gustov'}
-					>
-						George Gustov
-					</option>
-					<option
-						value='Victoria Martinez'
-						selected={formData.assignee === 'Victoria Martinez'}
-					>
-						Victoria Martinez
-					</option>
-				</select>
-			</section>
-			<section>
-				<label htmlFor='ticket-description'>Ticket Description</label>
-				<textarea
-					name='ticket-description'
-					id='ticket-description'
-					cols='50'
-					rows='20'
-					value={formData.description}
-					onChange={handleChange}
-				/>
-			</section>
-			<input type='button' value='submit' />
-		</form>
+		<div>
+			<form>
+				<h1>{editMode ? 'Update Your Ticket' : 'Create a Ticket'}</h1>
+				<label htmlFor='priority'>Priority</label>
+				<section className='multiple-input-container'>
+					<input
+						name='priority'
+						type='radio'
+						id='priority-1'
+						onChange={handleChange}
+						defaultValue={1}
+						checked={formData.priority == 1}
+					/>
+					<label htmlFor='priority-1'>1</label>
+					<input
+						name='priority'
+						type='radio'
+						id='priority-2'
+						onChange={handleChange}
+						defaultValue={2}
+						checked={formData.priority == 2}
+					/>
+					<label htmlFor='priority-2'>2</label>
+					<input
+						name='priority'
+						type='radio'
+						id='priority-3'
+						onChange={handleChange}
+						defaultValue={3}
+						checked={formData.priority == 3}
+					/>
+					<label htmlFor='priority-3'>3</label>
+					<input
+						name='priority'
+						type='radio'
+						id='priority-4'
+						onChange={handleChange}
+						defaultValue={4}
+						checked={formData.priority == 4}
+					/>
+					<label htmlFor='priority-4'>4</label>
+					<input
+						name='priority'
+						type='radio'
+						id='priority-5'
+						onChange={handleChange}
+						defaultValue={5}
+						checked={formData.priority == 5}
+					/>
+					<label htmlFor='priority-5'>5</label>
+				</section>
+				<section>
+					<label>Status</label>
+					<select name='status' id='status-select' onChange={handleChange}>
+						<option
+							name='status'
+							defaultValue='on started'
+							selected={formData.status == 'not started'}
+						>
+							Not Started
+						</option>
+						<option
+							name='status'
+							defaultValue='in progress'
+							selected={formData.status == 'in progress'}
+						>
+							In Progress
+						</option>
+						<option
+							name='status'
+							defaultValue='on hold'
+							selected={formData.status == 'on hold'}
+						>
+							On Hold
+						</option>
+						<option
+							name='status'
+							defaultValue='complete'
+							selected={formData.status == 'complete'}
+						>
+							Complete
+						</option>
+					</select>
+				</section>
+				<section>
+					<label htmlFor='assignee'>Assignee</label>
+					<select name='assignee' id='assignee-select' onChange={handleChange}>
+						<option
+							name='assignee'
+							defaultValue='Jon Doe'
+							selected={formData.assignee == 'Jon Doe'}
+						>
+							Jon Doe
+						</option>
+						<option
+							name='assignee'
+							defaultValue='Jane Doe'
+							selected={formData.assignee == 'Jane Doe'}
+						>
+							Jane Doe
+						</option>
+						<option
+							name='assignee'
+							defaultValue='Mark Jones'
+							selected={formData.assignee == 'Mark Jones'}
+						>
+							Mark Jones
+						</option>
+						<option
+							name='assignee'
+							defaultValue='Jackie Grayson'
+							selected={formData.assignee == 'Jackie Grayson'}
+						>
+							Jackie Grayson
+						</option>
+						<option
+							name='assignee'
+							defaultValue='Mary Mars'
+							selected={formData.assignee == 'Mary Mars'}
+						>
+							Mary Mars
+						</option>
+						<option
+							name='assignee'
+							defaultValue='George Gustov'
+							selected={formData.assignee == 'George Gustov'}
+						>
+							George Gustov
+						</option>
+						<option
+							name='assignee'
+							defaultValue='Victoria Martinez'
+							selected={formData.assignee == 'Victoria Martinez'}
+						>
+							Victoria Martinez
+						</option>
+					</select>
+				</section>
+				<section>
+					<label htmlFor='ticket-description'>Ticket Description</label>
+					<textarea
+						name='description'
+						id='ticket-description'
+						cols='50'
+						rows='20'
+						defaultValue={formData.description}
+						onChange={handleChange}
+					/>
+				</section>
+			</form>
+			<input type='button' defaultValue='submit' onClick={handleSubmit} />
+		</div>
 	)
 }
 
