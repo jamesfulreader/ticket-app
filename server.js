@@ -73,7 +73,6 @@ app.put('/tickets/:id', async (req, res) => {
 // Delete ticket
 app.delete('/tickets/:id', async (req, res) => {
 	const id = parseInt(req.params.id)
-
 	pool.query(
 		'DELETE FROM ticket_item WHERE ticket_id = $1',
 		[id],
