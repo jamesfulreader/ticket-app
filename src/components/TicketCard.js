@@ -4,6 +4,7 @@ import ResolveTicket from './ResolveTicket'
 import StatusDisplay from './StatusDisplay'
 import TicketDesc from './TicketDesc'
 import EditTicket from './EditTicket'
+import DeleteTicket from './DeleteTicket'
 
 function TicketCard({ ticket }) {
 	return (
@@ -15,6 +16,7 @@ function TicketCard({ ticket }) {
 			<TicketDesc description={ticket.description} />
 			<ResolveTicket />
 			<EditTicket id={ticket.ticket_id} />
+			<DeleteTicket id={ticket.ticket_id} />
 		</div>
 	)
 }

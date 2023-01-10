@@ -63,3 +63,16 @@ nav .icon {
 	text-transform: uppercase !important;
 	margin-left: 5px;
 }
+
+.delete-btn {
+	padding: 7px 15px;
+	border-radius: 5px;
+	width: 125px;
+	background-color: #f12626d0;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: 700;
+	text-transform: uppercase !important;
+	margin-left: 5px;
+}
