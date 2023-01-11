@@ -4,8 +4,7 @@ function ResolveTicket({ id }) {
 	const navigate = useNavigate()
 
 	const handleClick = () => {
-		const resolved = true
-		navigate(`/ticket/${id}`, { id: id, resolved: resolved })
+		console.log('resolve clicked')
 	}
 	return (
 		<strong>
