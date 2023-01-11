@@ -2,13 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
-function Ticket({ editMode }) {
+function Ticket({ editMode, resolved }) {
 	const [formData, setFormData] = useState({
-		// priority: '',
 		status: 'not started',
-		// timestamp: new Date().toLocaleString('en-GB', { timeZone: 'UTC' }),
 		assignee: 'Jon Doe',
-		// description: '',
 	})
 
 	const navigate = useNavigate()
@@ -64,7 +61,7 @@ function Ticket({ editMode }) {
 			<form>
 				<h1>{editMode ? 'Update Your Ticket' : 'Create a Ticket'}</h1>
 				<label htmlFor='priority'>Priority</label>
-				<section className='multiple-input-container'>
+				<section>
 					<input
 						name='priority'
 						type='radio'
@@ -111,8 +108,8 @@ function Ticket({ editMode }) {
 					/>
 					<label htmlFor='priority-5'>5</label>
 				</section>
+				<label>Status</label>
 				<section>
-					<label>Status</label>
 					<select name='status' id='status-select' onChange={handleChange}>
 						<option
 							name='status'
@@ -144,8 +141,8 @@ function Ticket({ editMode }) {
 						</option>
 					</select>
 				</section>
+				<label htmlFor='assignee'>Assignee</label>
 				<section>
-					<label htmlFor='assignee'>Assignee</label>
 					<select name='assignee' id='assignee-select' onChange={handleChange}>
 						<option
 							name='assignee'
@@ -198,8 +195,8 @@ function Ticket({ editMode }) {
 						</option>
 					</select>
 				</section>
+				<label htmlFor='ticket-description'>Ticket Description</label>
 				<section>
-					<label htmlFor='ticket-description'>Ticket Description</label>
 					<textarea
 						name='description'
 						id='ticket-description'
@@ -210,7 +207,12 @@ function Ticket({ editMode }) {
 					/>
 				</section>
 			</form>
-			<input type='button' defaultValue='submit' onClick={handleSubmit} />
+			<input
+				id='submit-btn'
+				type='button'
+				defaultValue='submit'
+				onClick={handleSubmit}
+			/>
 		</div>
 	)
 }

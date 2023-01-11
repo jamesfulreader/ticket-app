@@ -76,3 +76,33 @@ nav .icon {
 	text-transform: uppercase !important;
 	margin-left: 5px;
 }
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 3em;
+}
+
+form section {
+	margin: 0.25rem;
+}
+
+form section textarea {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	font-size: 12px;
+}
+
+input#submit-btn {
+	padding: 7px 15px;
+	border-radius: 5px;
+	width: 125px;
+	background-color: #262df1d0;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: 700;
+	text-transform: uppercase !important;
+}

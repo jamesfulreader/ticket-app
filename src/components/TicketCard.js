@@ -14,7 +14,7 @@ function TicketCard({ ticket }) {
 			<StatusDisplay status={ticket.status} />
 			<Assignee assignee={ticket.assignee} />
 			<TicketDesc description={ticket.description} />
-			<ResolveTicket />
+			<ResolveTicket id={ticket.ticket_id} />
 			<EditTicket id={ticket.ticket_id} />
 			<DeleteTicket id={ticket.ticket_id} />
 		</div>
